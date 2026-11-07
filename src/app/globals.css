@@ -21,6 +21,10 @@
   --font-sans: 'Inter', sans-serif;
 }
 
+*, ::before, ::after {
+  border-radius: 0px !important;
+}
+
 .font-anton {
   font-family: 'Anton', Impact, sans-serif !important;
 }

@@ -141,24 +141,24 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
         </div>
 
         {/* Sticky Stacking Cards Container */}
-        <div className="relative flex flex-col gap-12 sm:gap-16 pb-12">
+        <div className="relative flex flex-col gap-16 sm:gap-24 pb-20">
           {EVENTS.map((event, index) => {
             // Calculate sticky top offset so cards layer gracefully when sticking
-            // Sticky header height is ~76px, so top offset starts around 92px
-            const stickyTop = 92 + index * 40;
+            // Sticky header height is ~76px, so top offset starts around 88px
+            const stickyTop = 88 + index * 48;
 
             return (
               <div
                 key={event.id}
-                style={{ top: `${stickyTop}px` }}
-                className={`sticky w-full ${event.bg} ${event.textColor} border-3 border-[#111111] rounded-[24px] sm:rounded-[32px] shadow-[8px_8px_0px_0px_#111111] overflow-hidden transition-all duration-200`}
+                style={{ top: `${stickyTop}px`, borderRadius: '0px' }}
+                className={`sticky w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[640px] flex flex-col justify-between ${event.bg} ${event.textColor} border-2 border-[#111111] rounded-none shadow-[8px_8px_0px_0px_#111111] hover:shadow-[12px_12px_0px_0px_#111111] overflow-hidden transition-all duration-200`}
               >
                 {/* Card Top Title Bar (Stacked Header) */}
-                <div className="w-full px-6 sm:px-10 py-5 sm:py-6 flex items-center justify-between border-b-2 border-white/20 select-none bg-black/15">
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <span className="w-3.5 h-3.5 rounded-full bg-[#FFD400] inline-block shrink-0 border border-[#111111]" />
+                <div className="w-full px-6 sm:px-12 py-6 sm:py-7 flex items-center justify-between border-b-2 border-white/20 select-none bg-black/20">
+                  <div className="flex items-center gap-3 sm:gap-5">
+                    <span className="w-3.5 h-3.5 bg-[#FFD400] inline-block shrink-0 border-2 border-[#111111]" />
                     <h3
-                      className="text-[26px] sm:text-[42px] lg:text-[54px] leading-none font-anton uppercase tracking-tight text-white drop-shadow-[2px_2px_0px_#111111]"
+                      className="text-[28px] sm:text-[46px] lg:text-[60px] leading-none font-anton uppercase tracking-tight text-white drop-shadow-[2px_2px_0px_#111111]"
                       style={{ fontFamily: "'Anton', sans-serif" }}
                     >
                       {event.artist}
@@ -167,28 +167,28 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
 
                   <div className="flex items-center gap-3 sm:gap-6 shrink-0">
                     <span
-                      className="text-[26px] sm:text-[42px] lg:text-[54px] leading-none font-anton uppercase tracking-tight text-white drop-shadow-[2px_2px_0px_#111111]"
+                      className="text-[28px] sm:text-[46px] lg:text-[60px] leading-none font-anton uppercase tracking-tight text-white drop-shadow-[2px_2px_0px_#111111]"
                       style={{ fontFamily: "'Anton', sans-serif" }}
                     >
                       {event.date}
                     </span>
-                    <span className="hidden sm:inline-block px-3 py-1 text-[11px] font-mono font-bold uppercase bg-[#111111] text-[#FFD400] border border-white/30">
+                    <span className="hidden sm:inline-block px-3.5 py-1 text-[11px] font-mono font-bold uppercase bg-[#111111] text-[#FFD400] border border-white/30">
                       CONFIRMED
                     </span>
                   </div>
                 </div>
 
                 {/* Card Full Body (All cards open & fully detailed) */}
-                <div className="px-6 sm:px-10 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="px-6 sm:px-12 py-8 sm:py-12 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                   {/* Left Column: Details & Lineup */}
-                  <div className="lg:col-span-7 flex flex-col justify-between gap-6">
+                  <div className="lg:col-span-7 flex flex-col justify-between gap-8 h-full">
                     {/* About Event */}
-                    <div className="flex flex-col gap-2">
-                      <span className="text-[11px] font-mono tracking-[1.4px] text-white/80 uppercase font-bold">
+                    <div className="flex flex-col gap-3">
+                      <span className="text-[12px] font-mono tracking-[1.6px] text-white/80 uppercase font-bold">
                         ABOUT EVENT
                       </span>
                       <p
-                        className="text-[18px] sm:text-[23px] lg:text-[26px] leading-[1.2] font-anton uppercase tracking-wide text-white drop-shadow-[1px_1px_0px_#111111]"
+                        className="text-[20px] sm:text-[26px] lg:text-[30px] leading-[1.2] font-anton uppercase tracking-wide text-white drop-shadow-[1px_1px_0px_#111111]"
                         style={{ fontFamily: "'Anton', sans-serif" }}
                       >
                         {event.headline}
@@ -196,29 +196,29 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
                     </div>
 
                     {/* Festival Tag & Lineup */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-3 border-y-2 border-white/20 font-mono text-xs">
-                      <div className="flex flex-col gap-1">
-                        <span className="text-white/70 uppercase text-[10px] font-bold">FORMAT / THEME:</span>
-                        <span className="text-[#FFD400] font-bold uppercase text-[11px]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 py-4 border-y-2 border-white/20 font-mono text-xs">
+                      <div className="flex flex-col gap-1.5">
+                        <span className="text-white/70 uppercase text-[10px] font-bold tracking-wider">FORMAT / THEME:</span>
+                        <span className="text-[#FFD400] font-bold uppercase text-[12px] leading-relaxed">
                           {event.tagline}
                         </span>
                       </div>
-                      <div className="flex flex-col gap-1">
-                        <span className="text-white/70 uppercase text-[10px] font-bold">LINEUP INCLUDES:</span>
-                        <span className="text-white font-medium uppercase leading-relaxed text-[11px]">
+                      <div className="flex flex-col gap-1.5">
+                        <span className="text-white/70 uppercase text-[10px] font-bold tracking-wider">LINEUP INCLUDES:</span>
+                        <span className="text-white font-medium uppercase leading-relaxed text-[12px]">
                           {event.lineup.join(" / ")}
                         </span>
                       </div>
                     </div>
 
                     {/* Footer Info: Sponsor, Price, Buy Ticket Button */}
-                    <div className="flex flex-wrap items-end justify-between gap-6 pt-2">
+                    <div className="flex flex-wrap items-end justify-between gap-6 pt-3">
                       <div className="flex flex-col gap-1">
-                        <span className="text-[10px] font-mono text-white/70 uppercase tracking-wider font-bold">
+                        <span className="text-[11px] font-mono text-white/70 uppercase tracking-wider font-bold">
                           SPONSOR:
                         </span>
                         <span
-                          className="text-[14px] font-anton tracking-wide uppercase text-white"
+                          className="text-[15px] font-anton tracking-wide uppercase text-white"
                           style={{ fontFamily: "'Anton', sans-serif" }}
                         >
                           {event.sponsor}
@@ -226,11 +226,11 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
                       </div>
 
                       <div className="flex flex-col gap-1">
-                        <span className="text-[10px] font-mono text-white/70 uppercase tracking-wider font-bold">
+                        <span className="text-[11px] font-mono text-white/70 uppercase tracking-wider font-bold">
                           PRICE:
                         </span>
                         <span
-                          className="text-[24px] sm:text-[28px] font-anton text-[#FFD400] drop-shadow-[1px_1px_0px_#111111]"
+                          className="text-[26px] sm:text-[32px] font-anton text-[#FFD400] drop-shadow-[1px_1px_0px_#111111]"
                           style={{ fontFamily: "'Anton', sans-serif" }}
                         >
                           {event.price}
@@ -239,8 +239,8 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
 
                       <button
                         onClick={onOpenTickets}
-                        className={`px-8 py-3.5 ${event.buttonBg} ${event.buttonText} rounded-full font-anton text-[16px] tracking-[0.5px] uppercase font-bold border-2 border-[#111111] shadow-[4px_4px_0px_0px_#111111] hover:scale-105 active:scale-95 transition-transform cursor-pointer`}
-                        style={{ fontFamily: "'Anton', sans-serif" }}
+                        style={{ fontFamily: "'Anton', sans-serif", borderRadius: '0px' }}
+                        className={`px-9 py-4 ${event.buttonBg} ${event.buttonText} rounded-none font-anton text-[17px] tracking-[0.5px] uppercase font-bold border-2 border-[#111111] shadow-[4px_4px_0px_0px_#111111] hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-1 active:translate-y-1 transition-all cursor-pointer`}
                       >
                         BUY TICKET
                       </button>
@@ -248,16 +248,19 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
                   </div>
 
                   {/* Right Column: Stylized Live Photo Cutout */}
-                  <div className="lg:col-span-5 relative w-full h-[300px] sm:h-[360px] rounded-[20px] overflow-hidden border-2 border-[#111111] shadow-[4px_4px_0px_0px_#111111] bg-black/40">
+                  <div
+                    style={{ borderRadius: '0px' }}
+                    className="lg:col-span-5 relative w-full h-[360px] sm:h-[420px] lg:h-[480px] rounded-none overflow-hidden border-2 border-[#111111] shadow-[6px_6px_0px_0px_#111111] bg-black/40"
+                  >
                     <Image
                       src={event.image}
                       alt={`${event.artist} live event`}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 500px"
+                      sizes="(max-width: 1024px) 100vw, 550px"
                       className="object-cover contrast-125 saturate-120 grayscale hover:grayscale-0 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono uppercase bg-black/75 backdrop-blur-xs px-3 py-1.5 border border-white/20">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[12px] font-mono uppercase bg-black/80 backdrop-blur-xs px-4 py-2 border border-white/20">
                       <span className="text-white font-bold">{event.venue}</span>
                       <span className="text-[#FFD400] font-bold">ALL AGES</span>
                     </div>

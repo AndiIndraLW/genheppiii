@@ -137,7 +137,7 @@ export default function ScenesSection({ onSelectScene }: ScenesSectionProps) {
                   <span className={`text-[12px] font-mono tracking-[1.2px] ${scene.textColor} font-bold`}>
                     {scene.vol}
                   </span>
-                  <div className={`w-8 h-8 rounded-full ${scene.arrowBg} ${scene.arrowText} border border-[#111111] flex items-center justify-center text-sm font-bold group-hover:rotate-45 transition-transform duration-200`}>
+                  <div className={`w-8 h-8 rounded-none ${scene.arrowBg} ${scene.arrowText} border-2 border-[#111111] flex items-center justify-center text-sm font-bold group-hover:rotate-45 transition-transform duration-200`}>
                     ↗
                   </div>
                 </div>

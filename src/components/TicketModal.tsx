@@ -152,7 +152,7 @@ export default function TicketModal({ isOpen, onClose }: TicketModalProps) {
           </div>
         ) : (
           <div className="py-6 text-center flex flex-col items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#7AC142] text-[#111111] border-2 border-[#111111] flex items-center justify-center text-3xl font-bold shadow-[3px_3px_0px_0px_#111111]">
+            <div className="w-16 h-16 rounded-none bg-[#7AC142] text-[#111111] border-2 border-[#111111] flex items-center justify-center text-3xl font-bold shadow-[3px_3px_0px_0px_#111111]">
               ✓
             </div>
             <h3 className="text-[32px] text-[#111111] font-[family-name:var(--font-anton)] uppercase tracking-[0.5px]">
