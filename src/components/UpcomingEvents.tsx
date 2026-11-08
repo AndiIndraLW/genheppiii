@@ -53,7 +53,7 @@ const EVENTS: EventData[] = [
     borderColor: "border-[#111111]",
     buttonBg: "bg-[#FFD400]",
     buttonText: "text-[#111111]",
-    image: "/images/upcoming-feature.jpg",
+    image: "/assets/upcoming-feature.jpg",
   },
   {
     id: "malang",
@@ -79,7 +79,7 @@ const EVENTS: EventData[] = [
     borderColor: "border-[#111111]",
     buttonBg: "bg-[#111111]",
     buttonText: "text-[#FFFFFF]",
-    image: "/images/scene-music.jpg",
+    image: "/assets/scene-music.jpg",
   },
   {
     id: "jember",
@@ -105,7 +105,7 @@ const EVENTS: EventData[] = [
     borderColor: "border-[#111111]",
     buttonBg: "bg-[#FFFFFF]",
     buttonText: "text-[#111111]",
-    image: "/images/scene-skate.jpg",
+    image: "/assets/scene-skate.jpg",
   },
 ];
 
@@ -131,9 +131,6 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-[12px] text-[#111111] font-mono font-bold uppercase hidden md:inline-block">
-              EAST JAVA CIRCUIT · STACKING ON SCROLL
-            </span>
             <div className="px-3 py-1 bg-[#111111] text-[#FFD400] text-[11px] font-mono font-bold uppercase border border-[#111111]">
               3 CONFIRMED STOPS
             </div>
@@ -141,16 +138,16 @@ export default function UpcomingEvents({ onOpenTickets }: UpcomingEventsProps) {
         </div>
 
         {/* Sticky Stacking Cards Container */}
-        <div className="relative flex flex-col gap-16 sm:gap-24 pb-20">
+        <div className="relative flex flex-col gap-16 sm:gap-24 pb-36 sm:pb-48">
           {EVENTS.map((event, index) => {
             // Calculate sticky top offset so cards layer gracefully when sticking
-            // Sticky header height is ~76px, so top offset starts around 88px
-            const stickyTop = 88 + index * 48;
+            // Sticky header height is ~76px (with border 78px), so top offset starts around 84px
+            const stickyTop = 84 + index * 36;
 
             return (
               <div
                 key={event.id}
-                style={{ top: `${stickyTop}px`, borderRadius: '0px' }}
+                style={{ top: `${stickyTop}px`, zIndex: 10 + index, borderRadius: '0px' }}
                 className={`sticky w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[640px] flex flex-col justify-between ${event.bg} ${event.textColor} border-2 border-[#111111] rounded-none shadow-[8px_8px_0px_0px_#111111] hover:shadow-[12px_12px_0px_0px_#111111] overflow-hidden transition-all duration-200`}
               >
                 {/* Card Top Title Bar (Stacked Header) */}

@@ -29,7 +29,7 @@ export default function AboutSection({ onOpenProgram }: AboutSectionProps) {
             {/* Photo Container */}
             <div className="relative w-full h-full bg-[#111111] border-2 border-[#111111] overflow-hidden group shadow-[4px_4px_0px_0px_#111111]">
               <Image
-                src="/images/about.jpg"
+                src="/assets/about.jpg"
                 alt="genheppiii collective crew"
                 fill
                 sizes="(max-width: 768px) 300px, 420px"

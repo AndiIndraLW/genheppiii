@@ -25,6 +25,10 @@
   border-radius: 0px !important;
 }
 
+html, body {
+  overflow-x: clip;
+}
+
 .font-anton {
   font-family: 'Anton', Impact, sans-serif !important;
 }

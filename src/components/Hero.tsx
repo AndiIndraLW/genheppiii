@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
+import LiquidOverlay from "./LiquidOverlay";
 
 interface HeroProps {
   onOpenTickets: () => void;
@@ -9,11 +10,18 @@ interface HeroProps {
 
 export default function Hero({ onOpenTickets }: HeroProps) {
   const [activePhoto, setActivePhoto] = useState<"a" | "b">("b");
+  const heroRef = useRef<HTMLElement>(null);
 
   return (
-    <section className="relative w-full bg-[#7AC142] overflow-hidden pt-10 pb-16 sm:py-16 lg:py-20">
+    <section
+      ref={heroRef}
+      className="relative w-full bg-[#7AC142] overflow-hidden pt-10 pb-0 sm:pt-14 sm:pb-0 lg:pt-10 lg:pb-0"
+    >
       {/* Background ambient texture / subtle grid */}
-      <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#111111_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#111111_1.5px,transparent_1.5px)] [background-size:24px_24px] pointer-events-none z-0" />
+
+      {/* Interactive Liquid Background Overlay with dynamic fluid distortion */}
+      <LiquidOverlay containerRef={heroRef} />
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         {/* Hero Copy */}
@@ -53,16 +61,10 @@ export default function Hero({ onOpenTickets }: HeroProps) {
               EXPLORE THE SCENES ↓
             </a>
           </div>
-
-          {/* Meta ticker */}
-          <div className="text-[11px] text-[#111111] font-mono tracking-[0.8px] uppercase pt-2 flex items-center gap-2 font-bold">
-            <span className="text-[#D8232A]">●</span>
-            JAKARTA / BANDUNG / SURABAYA — NO SPONSOR LOGOS ON THE LINEUP
-          </div>
         </div>
 
         {/* Hero Collage */}
-        <div className="w-full lg:w-[560px] h-[480px] sm:h-[520px] relative flex items-center justify-center select-none">
+        <div className="w-full lg:w-[560px] h-[480px] sm:h-[520px] relative flex items-center justify-center select-none -translate-y-4 sm:-translate-y-6 lg:-translate-y-8">
           {/* Back Photo (Photo A) with Blue #0072BC shadow */}
           <div
             onClick={() => setActivePhoto("a")}
@@ -76,7 +78,7 @@ export default function Hero({ onOpenTickets }: HeroProps) {
             <div className="absolute inset-0 bg-[#0072BC] translate-x-3 translate-y-3 border-2 border-[#111111] z-0" />
             <div className="relative w-full h-full bg-[#111111] border-2 border-[#111111] overflow-hidden z-10 shadow-[4px_4px_0px_0px_#111111]">
               <Image
-                src="/images/hero-a.jpg"
+                src="/assets/hero-a.jpg"
                 alt="Show energy crowds"
                 fill
                 priority
@@ -103,7 +105,7 @@ export default function Hero({ onOpenTickets }: HeroProps) {
             <div className="absolute inset-0 bg-[#F26522] -translate-x-3 translate-y-3 border-2 border-[#111111] z-0" />
             <div className="relative w-full h-full bg-[#111111] border-2 border-[#111111] overflow-hidden z-10 shadow-[4px_4px_0px_0px_#111111]">
               <Image
-                src="/images/hero-b.jpg"
+                src="/assets/hero-b.jpg"
                 alt="Live crowd mosh"
                 fill
                 priority
@@ -130,6 +132,20 @@ export default function Hero({ onOpenTickets }: HeroProps) {
               SHOW #84 · GUDANG SARINAH · SURABAYA / JKT
             </span>
           </div>
+        </div>
+      </div>
+
+      {/* Hero Bottom Divider */}
+      <div className="w-full relative mt-6 sm:mt-8 lg:mt-3 overflow-hidden select-none pointer-events-none leading-none">
+        <div className="relative w-full h-[150px] sm:h-[120px] md:h-[155px] lg:h-[190px] xl:h-[280px]">
+          <Image
+            src="/assets/divider-hero.png"
+            alt="Hero section divider"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-top"
+          />
         </div>
       </div>
     </section>

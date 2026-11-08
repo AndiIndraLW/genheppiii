@@ -49,7 +49,7 @@ export default function ProgramModal({ isOpen, onClose, onOpenTickets }: Program
         </button>
 
         <div className="text-[11px] text-[#D8232A] font-mono tracking-[1.6px] uppercase font-bold pb-1">
-          ✳ SEASON 2026 COLLECTIVE CHARTER
+          ✳ SEASON 2027 COLLECTIVE CHARTER
         </div>
 
         <h2 className="text-[34px] sm:text-[42px] leading-tight font-[family-name:var(--font-anton)] tracking-[0.5px] uppercase">
@@ -57,7 +57,7 @@ export default function ProgramModal({ isOpen, onClose, onOpenTickets }: Program
         </h2>
 
         <p className="text-[13px] text-[#555555] font-sans pb-6 pt-1 font-medium">
-          Drafted by the crew in July 2013, reaffirmed for Season 2026. Four non-negotiable principles.
+          Drafted by the crew in July 2013, reaffirmed for Season 2027. Four non-negotiable principles.
         </p>
 
         <div className="flex flex-col gap-4">
@@ -79,7 +79,7 @@ export default function ProgramModal({ isOpen, onClose, onOpenTickets }: Program
             }}
             className="px-6 py-3 bg-[#D8232A] hover:bg-[#b81d23] text-[#FFFFFF] font-[family-name:var(--font-anton)] tracking-[0.5px] uppercase text-sm cursor-pointer border-2 border-[#111111] shadow-[3px_3px_0px_0px_#111111]"
           >
-            GET SEASON 2026 PASS →
+            GET SEASON 2027 PASS →
           </button>
           <button
             onClick={onClose}

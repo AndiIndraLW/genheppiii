@@ -26,7 +26,7 @@ export default function Footer({ onOpenTickets }: FooterProps) {
     {
       title: "SHOWS",
       links: [
-        { label: "All dates (Season 2026)", href: "#tickets" },
+        { label: "All dates (Season 2027)", href: "#tickets" },
         { label: "Season pass", href: "#tickets" },
         { label: "Ticketing FAQ", href: "#" },
         { label: "Access & safety", href: "#" },
@@ -68,7 +68,7 @@ export default function Footer({ onOpenTickets }: FooterProps) {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b-2 border-[#2B2A25]">
           <div>
             <div className="text-[12px] text-[#FFD400] font-mono tracking-[1.6px] uppercase font-bold pb-2">
-              SEASON 2026 · 14 SHOWS
+              SEASON 2027 · 14 SHOWS
             </div>
             <h2 className="text-[44px] sm:text-[58px] lg:text-[68px] leading-[0.95] text-[#7AC142] font-[family-name:var(--font-anton)] tracking-[0.5px] uppercase">
               SEE YOU IN THE PIT.
@@ -85,9 +85,6 @@ export default function Footer({ onOpenTickets }: FooterProps) {
                 ↗
               </span>
             </button>
-            <span className="text-[10px] text-[#FFD400] font-mono tracking-[1px] uppercase font-bold">
-              IDR 1.2M · ALL 14 SHOWS · TRANSFERABLE
-            </span>
           </div>
         </div>
 

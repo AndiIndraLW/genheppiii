@@ -21,10 +21,10 @@ export default function TopTicker({ onOpenTickets }: TopTickerProps) {
         onClick={onOpenTickets}
         className="animate-marquee cursor-pointer flex items-center gap-8 text-[11px] text-[#111111] font-mono font-bold tracking-[0.8px] uppercase whitespace-nowrap"
       >
-        <span>✳ SEASON 2026 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
-        <span>✳ SEASON 2026 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
-        <span>✳ SEASON 2026 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
-        <span>✳ SEASON 2026 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
+        <span>✳ SEASON 2027 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
+        <span>✳ SEASON 2027 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
+        <span>✳ SEASON 2027 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
+        <span>✳ SEASON 2027 EARLY BIRD PASSES ON SALE NOW — 30% OFF UNTIL 30 JUNE ✳ ALL AGES, ALWAYS</span>
       </div>
 
       <button

@@ -35,7 +35,7 @@ export const SCENES_DATA: SceneItem[] = [
     borderColor: "border-[#111111]",
     arrowBg: "bg-[#111111]",
     arrowText: "text-[#FFFFFF]",
-    image: "/images/scene-skate.jpg",
+    image: "/assets/scene-skate.jpg",
     rotation: "lg:rotate-[1.2deg]",
     history: {
       origin: "Started at an abandoned department store car park in Senayan with generator-powered halogen floodlights and two portable kickers.",
@@ -58,7 +58,7 @@ export const SCENES_DATA: SceneItem[] = [
     borderColor: "border-[#111111]",
     arrowBg: "bg-[#111111]",
     arrowText: "text-[#FFFFFF]",
-    image: "/images/scene-dance.jpg",
+    image: "/assets/scene-dance.jpg",
     rotation: "lg:-rotate-[0.7deg]",
     history: {
       origin: "Born out of cramped underground rehearsal studios in Bandung where dancers ran cyphers until 4 AM.",
@@ -81,7 +81,7 @@ export const SCENES_DATA: SceneItem[] = [
     borderColor: "border-[#111111]",
     arrowBg: "bg-[#FFD400]",
     arrowText: "text-[#111111]",
-    image: "/images/scene-music.jpg",
+    image: "/assets/scene-music.jpg",
     rotation: "lg:rotate-[0.6deg]",
     history: {
       origin: "The foundation of genheppiii. A response to commercial festival price gouging and sponsor-dominated lineups.",

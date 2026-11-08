@@ -11,13 +11,14 @@ export default function TicketModal({ isOpen, onClose }: TicketModalProps) {
   const [selectedPass, setSelectedPass] = useState<"season" | "single" | "supporter">("season");
   const [qty, setQty] = useState(1);
   const [step, setStep] = useState<"select" | "success">("select");
+  const [voucherCode, setVoucherCode] = useState("GH26-PIT-7842");
 
   if (!isOpen) return null;
 
   const passes = [
     {
       id: "season",
-      title: "SEASON 2026 FULL PASS",
+      title: "SEASON 2027 FULL PASS",
       price: 1200000,
       priceLabel: "IDR 1,200,000",
       desc: "Access to all 14 shows across Jakarta, Bandung, and Surabaya. 100% transferable.",
@@ -46,6 +47,7 @@ export default function TicketModal({ isOpen, onClose }: TicketModalProps) {
 
   const handleCheckout = (e: React.FormEvent) => {
     e.preventDefault();
+    setVoucherCode(`GH26-PIT-${Math.floor(1000 + Math.random() * 9000)}`);
     setStep("success");
   };
 
@@ -90,7 +92,7 @@ export default function TicketModal({ isOpen, onClose }: TicketModalProps) {
               {passes.map((pass) => (
                 <div
                   key={pass.id}
-                  onClick={() => setSelectedPass(pass.id as any)}
+                  onClick={() => setSelectedPass(pass.id as "season" | "single" | "supporter")}
                   className={`p-4 border-2 cursor-pointer transition-all ${
                     selectedPass === pass.id
                       ? "border-[#111111] bg-[#7AC142]/20 shadow-[4px_4px_0px_0px_#111111]"
@@ -162,7 +164,7 @@ export default function TicketModal({ isOpen, onClose }: TicketModalProps) {
               You secured <span className="text-[#D8232A] font-bold">{qty}x {currentPass.title}</span>. Your reservation voucher code is:
             </p>
             <div className="px-6 py-3 bg-[#FFD400] border-2 border-[#111111] font-mono text-[18px] tracking-[3px] text-[#111111] font-bold select-all shadow-[3px_3px_0px_0px_#111111]">
-              GH26-PIT-{Math.floor(1000 + Math.random() * 9000)}
+              {voucherCode}
             </div>
             <p className="text-[11px] text-[#444444] font-mono font-medium">
               Show this code at will-call door on show night. No need to print.

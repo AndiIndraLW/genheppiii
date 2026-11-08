@@ -23,7 +23,7 @@ export default function Home() {
   const handleCloseTickets = () => setTicketModalOpen(false);
 
   return (
-    <main className="min-h-screen flex flex-col bg-[#7AC142] text-[#111111] selection:bg-[#D8232A] selection:text-[#FFFFFF] overflow-x-hidden">
+    <main className="min-h-screen flex flex-col bg-[#7AC142] text-[#111111] selection:bg-[#D8232A] selection:text-[#FFFFFF] overflow-x-clip" style={{ overflowX: "clip" }}>
       {/* 1. Top Ticker marquee */}
       <TopTicker onOpenTickets={handleOpenTickets} />
 
